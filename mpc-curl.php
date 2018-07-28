@@ -38,8 +38,7 @@ function cURL($data)
 	}
 		
 	$ch = curl_init($data['url']);
-	//$fp = fopen("example_homepage.txt", "w");
-	
+
 	curl_setopt($ch, CURLOPT_USERAGENT,      $data['useragent']);
 	curl_setopt($ch, CURLOPT_TIMEOUT,        $data['timeout'] );
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, $data['followlocation']);
@@ -47,12 +46,7 @@ function cURL($data)
 	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, $data['ssl_verifypeer']);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, $data['returntransfer']);
 
-	//curl_setopt($ch, CURLOPT_FILE, $fp);
-	//curl_setopt($ch, CURLOPT_HEADER, 0);
-
 	$result = curl_exec($ch); // выполнение
 	curl_close($ch); // завершение сеанса
 	return $result;
-}
-
-?>
+} ?>
