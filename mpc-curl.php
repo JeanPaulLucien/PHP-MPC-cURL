@@ -1,4 +1,3 @@
-
 <?php
 
 // Use pattern below to give parameters to function
@@ -30,7 +29,8 @@ function cURL($data)
 	}
 	else if (is_string($data))
 	{
-		$data() = $default() = ['url' = $data];
+		$default['url'] = $data;
+		$data = $default;
 	}
 	else
 	{
